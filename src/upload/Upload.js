@@ -91,7 +91,7 @@ class Upload extends Component {
         method: 'post',
         url: `${'https://cors-anywhere.herokuapp.com/'}https://vast-meadow-62722.herokuapp.com/upload`,
         data: formData,
-        config: { headers: { 'Content-type': 'multipart/form-data'}}   
+        config: { headers: { 'Accept': 'application/json'}}   
       })
       .then(function(response){
         currentComponent.setState({ data: (response)})
