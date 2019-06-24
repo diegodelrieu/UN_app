@@ -89,9 +89,9 @@ class Upload extends Component {
       let currentComponent = this; 
       axios({
         method: 'post',
-        url: `${'https://cors-anywhere.herokuapp.com/'}https://vast-meadow-62722.herokuapp.com/upload`,
+        url: 'https://vast-meadow-62722.herokuapp.com/upload',
         data: formData,
-        config: { headers: { 'Accept': 'application/json'}}   
+        config: { headers: { 'Content-type': 'multipart/form-data'}}   
       })
       .then(function(response){
         currentComponent.setState({ data: (response)})
