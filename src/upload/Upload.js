@@ -89,7 +89,7 @@ class Upload extends Component {
       let currentComponent = this; 
       axios({
         method: 'post',
-        url: 'http://localhost:8000/upload',
+        url: 'https://vast-meadow-62722.herokuapp.com/upload',
         data: formData,
         config: { headers: { 'Content-type': 'multipart/form-data'}}   
       })
