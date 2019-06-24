@@ -91,6 +91,7 @@ class Upload extends Component {
         method: 'post',
         url: 'https://vast-meadow-62722.herokuapp.com/upload',
         data: formData,
+        mode: 'no-cors',
         config: { headers: { 'Content-type': 'multipart/form-data'}}   
       })
       .then(function(response){
