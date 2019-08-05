@@ -14,22 +14,24 @@ class Radar extends React.Component {
   }
   
   render() {
-    console.log(this.props.data.data.slice(-1)[0])
-  let GHG = this.props.data.data.slice(-1)[0].GHG; 
-  let Acidication = this.props.data.data.slice(-1)[0].Acid; 
-  let Eutrophication = this.props.data.data.slice(-1)[0].Eutr; 
-  let landUse = this.props.data.data.slice(-1)[0].Land_use
-  let Freshwater = this.props.data.data.slice(-1)[0].Freshwater
+    let GHG = this.props.data.data.slice(-1)[0].GHG; 
+    let Acidication = this.props.data.data.slice(-1)[0].Acid; 
+    let Eutrophication = this.props.data.data.slice(-1)[0].Eutr; 
+    let landUse = this.props.data.data.slice(-1)[0].Land_use
+    let Freshwater = this.props.data.data.slice(-1)[0].Freshwater
+    const ghgFactor = 10
+    const freshwaterFactor = 100
+    const acidificationFactor = 100 
+    const eutrophicationFactor = 100
+    const landUseFactor = 10
 
-  Freshwater = Freshwater / 100 
-  landUse = landUse * 10 
-  GHG = GHG * 10
-  Acidication = Acidication * 100 
-  Eutrophication = Eutrophication * 100 
+    Freshwater = Freshwater / freshwaterFactor
+    landUse = landUse * landUseFactor
+    GHG = GHG * ghgFactor
+    Acidication = Acidication * acidificationFactor
+    Eutrophication = Eutrophication * eutrophicationFactor
 
-  console.log(Freshwater, landUse, GHG, Acidication, Eutrophication)
-
- 	 const data = [
+    const data = [
       {
         data:  {
           Land_use: landUse,
@@ -44,7 +46,6 @@ class Radar extends React.Component {
     ];
  
     const captions = {
-      // columns
       Land_use: 'Land Use',
       GHG: 'Greenhouse Gases',
       Acid: 'Acidification',
